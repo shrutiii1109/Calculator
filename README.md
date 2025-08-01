@@ -1,5 +1,5 @@
 # Calculator
-#🔢 Warm & Modern Calculator
+# Warm & Modern Calculator
 
 A responsive, animated web calculator built using **HTML**, **CSS**, and **JavaScript**, featuring a cozy warm theme and interactive UI.
 
