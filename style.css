@@ -1,0 +1,114 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+  transition: all 0.3s ease;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(270deg, #ffecd2, #fcb69f, #f8b195, #fcd5b5);
+  background-size: 800% 800%;
+  animation: gradientFlow 15s ease infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.container {
+  width: 350px;
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(5px);
+}
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+}
+
+#display {
+  height: 60px;
+  font-size: 26px;
+  background-color: #fff8f0;
+  color: #333;
+  border: none;
+  border-radius: 12px;
+  padding: 10px;
+  text-align: right;
+  margin-bottom: 20px;
+  box-shadow: inset 0 0 5px #ddd;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.btn {
+  height: 60px;
+  font-size: 20px;
+  background: #fce4ec;
+  color: #4e342e;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow: 0 4px #d7ccc8;
+  transition: transform 0.2s ease, background 0.2s ease;
+  position: relative;
+}
+
+.btn:active {
+  background-color: #ffccbc;
+  transform: scale(0.95);
+  box-shadow: 0 2px #bdbdbd;
+}
+
+.btn.clicked::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 15px;
+  background: rgba(255, 204, 128, 0.5);
+  animation: clickGlow 0.4s ease-out;
+}
+
+@keyframes clickGlow {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+
+.operator {
+  background-color: #ffe0b2;
+  color: #bf360c;
+}
+
+.operator:hover {
+  background-color: #ffcc80;
+}
+
+.equals {
+  background-color: #ff7043;
+  color: white;
+  grid-column: span 2;
+}
+
+.equals:hover {
+  background-color: #f4511e;
+}
